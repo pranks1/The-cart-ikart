@@ -7,7 +7,7 @@ class Product(models.Model):
     title = models.CharField(max_length=30)
     description = models.CharField(max_length=200)
     attributes = models.ForeignKey('Attributes')
-    categorys = models.ManyToManyField('Category')
+    categorys = models.ManyToManyField('Category', related_name='products')
 
     def __unicode__(self):
         return self.title

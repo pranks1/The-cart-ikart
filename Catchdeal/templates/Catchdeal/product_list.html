@@ -3,16 +3,20 @@
         <title>Catchdeal </title>
     </head>
     <body>
+        {{b}}
         <div>
-            <h1><a href="">Catchdeal</a></h1>
+            <h1><a href="/">Catchdeal</a></h1>
         </div>
 
 
         {% for p in products %}
-            {{p}} - {% for c in p.categorys.all %} {{c}}, {% endfor %}
+        <a href="{% url 'product_detail' pk=p.pk%}">{{p}}</a> - {% for c in p.categorys.all %} {{c}}, {% endfor %}
              -  {{p.attributes.price}} <br/>
         {% endfor %}
 
+        <br/>
+        <br/>
+        <a href="{% url 'category'%}">All Categories</a>
 
     </body>
 </html>

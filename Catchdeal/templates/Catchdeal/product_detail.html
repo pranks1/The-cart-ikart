@@ -1,0 +1,29 @@
+    <div class="products">
+        <h1><a href="#">{{ product.title }}</a></h1>
+        <p>{{ product.description}}</p>
+
+        more related products : <br/>
+        {% for c in product.categorys.all %}
+            {% for product in c.products.all %}
+            <a href="{% url 'product_detail' pk=product.pk%}">{{product}} <br/>,
+            {% endfor %}
+        {% endfor %}
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
